@@ -10,7 +10,6 @@ const routes: Routes = [
   {path:'agregarSucursal', component:CrearSucursalComponent},
   {path:'editarSucursal', component:EditarSucursalComponent},
   {path:'**',pathMatch:'full',redirectTo:''},
- // {path:'listado', component:ListadoPersonasComponent},
 ];
 
 export const APPROUTES = RouterModule.forRoot(routes);
