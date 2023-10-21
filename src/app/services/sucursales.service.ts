@@ -6,8 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class SucursalesService {
-  url = "http://personasapi.test/api/prueba";
-  url2 = "http://10.23.14.200:7902";
+  url = "http://sucursalesapi.test/api/prueba";
   headers = new Headers({ 'content-type': 'application/json' });
   constructor(private http: HttpClient) { }
 
