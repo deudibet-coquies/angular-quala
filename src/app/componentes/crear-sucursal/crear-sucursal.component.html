@@ -1,0 +1,56 @@
+<div class="card border-dark mt-3">
+    <div class="card-header">
+        <h3 class="card-title text-center">Agregar sucursales</h3>
+    </div>
+    <div class="card-body">
+        <div class="alert alert-danger" *ngIf="error.length > 0" role="alert">
+            <ul>
+                <li *ngFor="let item of error">
+                    {{item}}
+                </li>
+            </ul>
+        </div>
+        <form class="needs-validation" [formGroup]="formulario" (ngSubmit)="guardar()" novalidate>
+
+            <div class="form-row">
+                <div class="col-xs-12 col-md-4">
+                    <label for="codigo" class="ent-titulo"><span class="color">*</span> Código</label>
+                    <input type="text" class="form-control ent" id="codigo" name="codigo" formControlName="codigo"
+                        autocomplete="off">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-4">
+                    <label for="identificador" class="ent-titulo"><span class="color">*</span> Identificación</label>
+                    <input type="text" class="form-control ent" id="identificador" name="identificador"
+                        formControlName="identificador" autocomplete="off">
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-4">
+                    <label for="direccion" class="ent-titulo"><span class="color">*</span> Dirección</label>
+                    <input type="text" class="form-control ent" id="direccion" name="direccion" formControlName="direccion"
+                        autocomplete="off">
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-xs-12 col-md-12">
+                    <label for="descripcion" class="ent-titulo"><span class="color">*</span> Descripción</label>
+                    <textarea type="text" class="form-control ent" id="descripcion" name="descripcion" formControlName="descripcion"
+                        autocomplete="off" rows="3"></textarea>
+                    <div class="mt-1 color" *ngIf="formulario.get('descripcion').errors && formulario.get('descripcion').dirty">
+                        <p *ngIf="formulario.get('descripcion').hasError('pattern')">solo valores numéricos</p>
+                    </div>
+                </div>
+               
+              
+            </div>
+            <div class="mx-auto" style="width:120px;">
+                <input class="btn btn-primary mt-3" type="submit" [disabled]="!formulario.valid" value="Crear registro">
+            </div>
+        </form>
+    </div>
+</div>

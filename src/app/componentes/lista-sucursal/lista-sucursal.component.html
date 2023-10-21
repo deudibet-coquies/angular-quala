@@ -1,0 +1,33 @@
+<div class="card border-dark mt-3">
+    <div class="card-header">
+        <h3 class="card-title text-center">Listado de Sucursales</h3>
+    </div>
+    <div class="card-body">
+        <table class="table table-striped">
+            <thead>
+                <tr class="text-center">
+                    <th scope="col">Código</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Dirección</th>
+                    <th scope="col">Identificación</th>
+                    <th scope="col">Fechas de creación</th>                    
+                    <th scope="col">Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of personas">
+                    <td>{{p.nombres}} {{p.apellidos}}</td>
+                    <td>{{p.cedula}}</td>
+                    <td>{{p.correo}}</td>
+                    <td>{{p.telefono}}</td>
+                    <td>{{p.telefono}}</td>
+                    <td class="text-center">
+                        <a class="btn btn-primary" [routerLink]="['/editarSucursal',p.id]" role="button">Editar</a>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="card border-dark mt-3">
+    <div class="card-header">
+        <h3 class="card-title text-center">Editar registros</h3>
+    </div>
+    <div class="card-body">
+        <form (ngSubmit)="editarSucursal(editarP)" #editarP="ngForm" novalidate>
+
+            <div class="row">
+                <div class="col-xs-12 col-md-4">
+                    <label for="nombres" class="ent-titulo">Código</label>
+                    <input type="text" class="form-control ent" id="nombres" name="nombres"
+                        [(ngModel)]="persona.nombres" #nombres="ngModel" autocomplete="off">
+                </div>
+                <div class="col-xs-12 col-md-4">
+                    <label for="apellidos" class="ent-titulo">Identificación</label>
+                    <input type="text" class="form-control ent" id="apellidos" name="apellidos"
+                        [(ngModel)]="persona.apellidos" #apellidos="ngModel" autocomplete="off">
+                </div>
+                <div class="col-xs-12 col-md-4">
+                    <label for="cedula" class="ent-titulo">Dirección</label>
+                    <input type="text" class="form-control ent" id="cedula" name="cedula" [(ngModel)]="persona.cedula" #cedula="ngModel"
+                        autocomplete="off">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-md-12">
+                    <label for="Correo" class="ent-titulo">Descripción</label>                    
+                    <textarea  type="text" class="form-control ent" id="Correo" name="Correo" [(ngModel)]="persona.correo"
+                        #correo="ngModel" autocomplete="off"rows="3"></textarea>
+                </div> 
+            </div>
+            <div class="mx-auto" style="width:120px;">
+                <input class="btn btn-primary mt-3" type="submit" value="Modificar">
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<div class="container">
+    <!-- <a class="btn btn-primary mb-2" [routerLink]="['/listado']"  role="button">Listado</a> -->
+
+
+
+
+</div>
