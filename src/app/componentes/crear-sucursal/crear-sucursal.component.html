@@ -13,7 +13,7 @@
         <form class="needs-validation" [formGroup]="formulario" (ngSubmit)="guardar()" novalidate>
 
             <div class="form-row">
-                <div class="col-xs-12 col-md-4">
+                <div class="col-xs-12 col-md-3">
                     <label for="codigo" class="ent-titulo"><span class="color">*</span> Código</label>
                     <input type="text" class="form-control ent" id="codigo" name="codigo" formControlName="codigo"
                         autocomplete="off">
@@ -21,7 +21,7 @@
                         Looks good!
                     </div>
                 </div>
-                <div class="col-xs-12 col-md-4">
+                <div class="col-xs-12 col-md-3">
                     <label for="identificador" class="ent-titulo"><span class="color">*</span> Identificación</label>
                     <input type="text" class="form-control ent" id="identificador" name="identificador"
                         formControlName="identificador" autocomplete="off">
@@ -29,10 +29,17 @@
                         Looks good!
                     </div>
                 </div>
-                <div class="col-xs-12 col-md-4">
+                <div class="col-xs-12 col-md-3">
                     <label for="direccion" class="ent-titulo"><span class="color">*</span> Dirección</label>
                     <input type="text" class="form-control ent" id="direccion" name="direccion" formControlName="direccion"
                         autocomplete="off">
+                </div>
+                <div class="col-xs-12 col-md-3">
+                    <label for="moneda" class="ent-titulo">Moneda</label>
+                    <select class="form-control ent"
+                    id="moneda" name="moneda" formControlName="moneda"                   >
+                        <option [value]="item.codigo" *ngFor="let item of monedas">{{item.descripcion}}</option>
+                    </select>
                 </div>
             </div>
             <div class="row">

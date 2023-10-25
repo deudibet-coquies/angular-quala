@@ -6,20 +6,23 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class SucursalesService {
-  url = "http://sucursalesapi.test/api/prueba";
+  url = "https://localhost:7150";
   headers = new Headers({ 'content-type': 'application/json' });
   constructor(private http: HttpClient) { }
 
   getSucursal() {
-    let url = this.url;
-    return this.http.get(url);
+    return this.http.get(`${this.url}/api/Sucursal/Lista-sucursales`);
+  }
+
+  getMonedas() {
+    return this.http.get(`${this.url}/api/Sucursal/Lista-monedas`);
   }
 
   nuevaSucursal(dato: any) {
-    return this.http.post(this.url, dato);
+    return this.http.post(`${this.url}/api/Sucursal/Crear-sucursales`, dato);
   }
 
   editarSucursal(dato: any) {
-    return this.http.put(`${this.url}/${dato.id}`, dato);
+    return this.http.post(`${this.url}/api/Sucursal/Editar-sucursales`, dato);
   }
 }

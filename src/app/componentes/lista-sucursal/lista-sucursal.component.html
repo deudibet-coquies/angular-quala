@@ -16,13 +16,13 @@
             </thead>
             <tbody>
                 <tr *ngFor="let p of sucursales">
-                    <td>{{p.codigo}}</td>
-                    <td>{{p.descripcion}}</td>
-                    <td>{{p.direccion}}</td>
-                    <td>{{p.identificacion}}</td>
-                    <td>{{p.fecha-creacion}}</td>
+                    <td style="text-align: center;">{{p.codigo}}</td>
+                    <td style="text-align: center;">{{p.descripcion}}</td>
+                    <td style="text-align: center;">{{p.direccion}}</td>
+                    <td style="text-align: center;">{{p.identificacion}}</td>
+                    <td style="text-align: center;">{{p.fechaCreacion | date }}</td>
                     <td class="text-center">
-                        <a class="btn btn-primary" [routerLink]="['/editarSucursal',p.id]" role="button">Editar</a>
+                        <a class="btn btn-primary" [routerLink]="['/editarSucursal',p.codigo]" role="button">Editar</a>
                     </td>
                 </tr>
 

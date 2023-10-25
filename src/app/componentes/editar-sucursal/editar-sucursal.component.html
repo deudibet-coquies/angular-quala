@@ -6,20 +6,26 @@
         <form (ngSubmit)="editarSucursal(editarP)" #editarP="ngForm" novalidate>
 
             <div class="row">
-                <div class="col-xs-12 col-md-4">
+                <div class="col-xs-12 col-md-3">
                     <label for="codigo" class="ent-titulo">Código</label>
                     <input type="text" class="form-control ent" id="codigo" name="codigo"
                         [(ngModel)]="sucursal.codigo" #codigo="ngModel" autocomplete="off">
                 </div>
-                <div class="col-xs-12 col-md-4">
+                <div class="col-xs-12 col-md-3">
                     <label for="identificacion" class="ent-titulo">Identificación</label>
                     <input type="text" class="form-control ent" id="identificacion" name="identificacion"
                         [(ngModel)]="sucursal.identificacion" #identificacion="ngModel" autocomplete="off">
                 </div>
-                <div class="col-xs-12 col-md-4">
+                <div class="col-xs-12 col-md-3">
                     <label for="direccion" class="ent-titulo">Dirección</label>
                     <input type="text" class="form-control ent" id="direccion" name="direccion" [(ngModel)]="sucursal.direccion" #cedula="ngModel"
                         autocomplete="off">
+                </div>
+                <div class="col-xs-12 col-md-3">
+                    <label for="moneda" class="ent-titulo">Moneda</label>
+                    <select class="form-control ent" name="miselect" [(ngModel)]="sucursal.moneda">
+                        <option [value]="item.codigo" *ngFor="let item of monedas">{{item.descripcion}}</option>
+                    </select>
                 </div>
             </div>
             <div class="row">

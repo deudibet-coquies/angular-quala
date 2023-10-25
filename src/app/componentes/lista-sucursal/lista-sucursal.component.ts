@@ -16,7 +16,7 @@ export class ListaSucursalComponent implements OnInit {
   ngOnInit() {
     this._sucursal.getSucursal().subscribe(data => {
       this.sucursales = data;
-      console.log('listado: ', this.sucursales);
+     // console.log('listado: ', this.sucursales);
     })
   }
 

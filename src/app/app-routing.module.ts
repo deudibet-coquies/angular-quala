@@ -8,7 +8,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {path:'listado', component:ListaSucursalComponent},
   {path:'agregarSucursal', component:CrearSucursalComponent},
-  {path:'editarSucursal', component:EditarSucursalComponent},
+  {path:'editarSucursal/:codigo', component:EditarSucursalComponent},
   {path:'**',pathMatch:'full',redirectTo:''},
 ];
 

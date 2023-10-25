@@ -14,16 +14,17 @@ export class CrearSucursalComponent implements OnInit {
   day: Date;
   sucursal: any = {};
   sucursales: any = [];
+  monedas: any = [];
   error = [];
   formulario: FormGroup;
 
-  constructor(private _crear: SucursalesService, private router: Router) {
+  constructor(private _crear: SucursalesService, private router: Router, private _sucursal: SucursalesService,) {
     this.formulario = new FormGroup({
       codigo: new FormControl("", [Validators.required]),
       descripcion: new FormControl("", [Validators.required]),
       direccion: new FormControl("", [Validators.required]),
-      fechaCreacion: new FormControl("", [Validators.required]),
       identificador: new FormControl("", [Validators.required]),
+      moneda: new FormControl("", [Validators.required]),
     })
 
    
@@ -31,6 +32,10 @@ export class CrearSucursalComponent implements OnInit {
 
   ngOnInit() {
     this.day = new Date();
+    this._sucursal.getMonedas().subscribe(data => {
+      this.monedas = data;
+      console.log('monedas: ', this.monedas);
+    })
   }
 
   guardar() {
@@ -38,12 +43,12 @@ export class CrearSucursalComponent implements OnInit {
     let nuevo = {
       codigo: this.formulario.value.codigo,
       descripcion: this.formulario.value.descripcion,
-      direccion: this.formulario.value.direccion,
+      direccion: this.formulario.value.direccion,      
+      identificacion: this.formulario.value.identificador,
       fechaCreacion: this.day,
-      identificador: this.formulario.value.identificador,
-      moneda: '',
+      moneda: this.formulario.value.moneda,
     }
-   
+   console.log('asi va la data',nuevo);
     this._crear.nuevaSucursal(nuevo).subscribe(
       (resp) => {
         this.formulario.reset();
